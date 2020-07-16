@@ -1,5 +1,7 @@
 package com.jalasoft.project;
 
+import com.jalasoft.project.polymorphism.Land;
+import com.jalasoft.project.polymorphism.ListLandTransport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,7 +15,19 @@ import java.util.List;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        // SpringApplication.run(Main.class, args);
+        Land land1 = new Land("name1", 500, false);
+        Land land2 = new Land("name2", 1000, true);
+        Land land3 = new Land("name3", 20, false);
+
+        ListLandTransport listLandTransport = new ListLandTransport();
+
+        listLandTransport.addLand(land1);
+        listLandTransport.addLand(land2);
+        listLandTransport.addLand(land3);
+
+        listLandTransport.display();
+
+        /* // SpringApplication.run(Main.class, args);
         List<String> countries = new ArrayList<>();
         countries.add("Bolivia");
         countries.add("Argentina");
@@ -35,7 +49,7 @@ public class Main {
         // 3. Filtrar solo los que la suma de sus caracteres sea par
         countries.stream()
                 .filter(country -> country.length() % 2 == 0)
-                .forEach(country -> System.out.println(country));
+                .forEach(country -> System.out.println(country)); */
 
     }
 }
