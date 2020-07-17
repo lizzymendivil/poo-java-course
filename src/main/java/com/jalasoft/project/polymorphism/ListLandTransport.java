@@ -12,6 +12,10 @@ public class ListLandTransport {
     }
 
     public void display() {
-        this.list.stream().forEach(item -> System.out.println(item));
+        this.list.stream().forEach(item -> {
+            System.out.println("Name: " + item.getName());
+            System.out.println("Price: " + item.getPrice());
+            System.out.println("*************************");
+        });
     }
 }

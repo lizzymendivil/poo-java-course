@@ -1,5 +1,7 @@
 package com.jalasoft.project;
 
+import com.jalasoft.project.polymorphism.Bicycle;
+import com.jalasoft.project.polymorphism.Car;
 import com.jalasoft.project.polymorphism.Land;
 import com.jalasoft.project.polymorphism.ListLandTransport;
 import org.springframework.boot.SpringApplication;
@@ -15,15 +17,13 @@ import java.util.List;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        Land land1 = new Land("name1", 500, false);
-        Land land2 = new Land("name2", 1000, true);
-        Land land3 = new Land("name3", 20, false);
+        Land land1 = new Bicycle("name1", 500, false, true);
+        Land land2 = new Car("name2", 1000, true, true);
 
         ListLandTransport listLandTransport = new ListLandTransport();
 
         listLandTransport.addLand(land1);
         listLandTransport.addLand(land2);
-        listLandTransport.addLand(land3);
 
         listLandTransport.display();
 
